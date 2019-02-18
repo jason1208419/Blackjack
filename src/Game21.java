@@ -110,19 +110,13 @@ public class Game21 {
                 String answer2 = "";
                 if (finalScore[0] <= 21 && !stick[0]) {
                     while (!ans2got) {
-                        try {
-                            while (!ans2got) {
-                                System.out.println("\nDo you want another card? (stick / hit)");
-                                Scanner t = new Scanner(System.in);
-                                answer2 = t.nextLine();
-                                if (answer2.equalsIgnoreCase("stick") || answer2.equalsIgnoreCase("hit"))
-                                    ans2got = true;
-                                else
-                                    System.err.println("ERROR: Please enter stick or hit!");
-                            }
-                        } catch (final Exception e) {
+                        System.out.println("\nDo you want another card? (stick / hit)");
+                        Scanner t = new Scanner(System.in);
+                        answer2 = t.nextLine();
+                        if (answer2.equalsIgnoreCase("stick") || answer2.equalsIgnoreCase("hit")) {
+                            ans2got = true;
+                        } else {
                             System.err.println("ERROR: Please enter stick or hit!");
-                            ans2got = false;
                         }
                     }
                 } else {
@@ -260,20 +254,14 @@ public class Game21 {
             boolean ans8got = false;
             String answer8 = "";
             while (!ans8got) {
-                try {
-                    while (!ans8got) {
-                        System.out.println();
-                        System.out.println("Do you want another game? (y/n)");
-                        Scanner z = new Scanner(System.in);
-                        answer8 = z.nextLine();
-                        if (answer8.equalsIgnoreCase("y") || answer8.equalsIgnoreCase("n"))
-                            ans8got = true;
-                        else
-                            System.err.println("ERROR: Please enter y or n!");
-                    }
-                } catch (final Exception e) {
+                System.out.println();
+                System.out.println("Do you want another game? (y/n)");
+                Scanner z = new Scanner(System.in);
+                answer8 = z.nextLine();
+                if (answer8.equalsIgnoreCase("y") || answer8.equalsIgnoreCase("n")) {
+                    ans8got = true;
+                } else {
                     System.err.println("ERROR: Please enter y or n!");
-                    ans8got = false;
                 }
             }
             again = answer8.equalsIgnoreCase("y");
